@@ -1,0 +1,71 @@
+
+        /* Light Theme */
+        :root {
+            --bg-gradient: linear-gradient(to right, lightblue, #c2cbd1); 
+            --text-color: black;
+            --primary-color: #1e3a8a; /* Beautiful Blue */
+            --seat-available: rgb(0, 127, 0);
+            --seat-booked: red;
+            --footer-color: rgb(221, 23, 56);
+        }
+
+        /* Dark Theme */
+        [data-theme="dark"] {
+            --bg-gradient: linear-gradient(to top, #1a1a2e, #16213e); /* Dark black */
+            --text-color: #ffffff;
+            --primary-color: #00aaff; /* Sky Blue */
+            --seat-available: #00ff00; /* Bright Green */
+            --seat-booked: #ff3333; /* Bright Red */
+            --footer-color: pink;
+        }
+
+        body {
+            
+            background-image: var(--bg-gradient);
+            background-size: cover;
+            color: var(--text-color);
+            transition: background-image 0.3s, color 0.3s;
+        }
+
+        .seat { 
+            width: 50px; 
+            height: 50px; 
+            margin: 5px;
+            font-size: 20px;
+            
+            display: inline-flex; /* Use flexbox for centering */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+           /* Thicker border for better definition */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+        }
+        
+        .available { 
+            background-color: var(--seat-available); 
+        }
+
+        .booked { 
+            background-color: var(--seat-booked); 
+            cursor: not-allowed; /* Indicate that booked seats cannot be clicked */
+        }
+
+        .available:hover {
+            background-color: rgba(0, 127, 0, 0.8); /* Slightly darker on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--footer-color);
+        }
+        #bookBtn,#resetBtn {
+            color: white; background-color: black; padding: 4px; width: 100px;
+        }
+        #bookBtn:hover,#resetBtn:hover {
+        
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        transition-duration: 0.3s;
+    }
+        
+   
